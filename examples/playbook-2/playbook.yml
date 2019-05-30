@@ -1,0 +1,8 @@
+### Playbook 1
+
+- name: Playbook Two Example - Variables and Templates
+  hosts: all
+  roles:
+      - common
+      - web
+  become: true

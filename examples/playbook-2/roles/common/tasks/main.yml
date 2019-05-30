@@ -1,0 +1,14 @@
+---
+# Show Ansible Facts
+# Display the Hostname
+
+# https://docs.ansible.com/ansible/latest/modules/hostname_module.html
+- name: Change the Hostname
+  hostname: name="web01"
+
+- name: Displaying Debug Information
+  debug: var=ansible_facts
+
+- name: Display the systems hostname
+  debug:
+    msg: "The system's hostname is {{ hostname }}"

@@ -1,0 +1,8 @@
+### Playbook 1
+
+- name: Playbook Three Example - Manipulating Files
+  hosts: all
+  roles:
+      - common
+      - web
+  become: true

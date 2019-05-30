@@ -1,0 +1,20 @@
+---
+# Playbook One
+# Demonstrate the following
+#   - Install a Package
+#   - Configure a Service to Start at Boot
+
+# https://docs.ansible.com/ansible/latest/modules/hostname_module.html
+- name: Change the Hostname
+  hostname: name="web01"
+
+# https://docs.ansible.com/ansible/latest/modules/yum_module.html
+- name: Install the Apache HTTPD Server
+  yum: name=httpd state=present
+
+# https://docs.ansible.com/ansible/latest/modules/service_module.html
+- name: Configure HTTPD to Start at Boot
+  service:
+    name: httpd
+    enabled: yes
+    state: started

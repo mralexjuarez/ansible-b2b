@@ -1,0 +1,25 @@
+---
+# This is playbook-1
+# In this playbook we will demonstrate the following
+#   - Install a Package
+#   - Configure a Service to Start at Boot
+
+# https://docs.ansible.com/ansible/latest/modules/yum_module.html
+- name: Install the Apache HTTPD Server
+  yum: name=httpd state=present
+
+# https://docs.ansible.com/ansible/latest/modules/service_module.html
+- name: Configure HTTPD to Start at Boot
+  service:
+    name: httpd
+    enabled: yes
+    state: started
+
+# https://docs.ansible.com/ansible/latest/modules/template_module.html
+- name: Copy an index.html file with the hostname replaced
+  template:
+    src: templates/index.html.j2
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: "0644"

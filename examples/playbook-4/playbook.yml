@@ -1,0 +1,7 @@
+### Playbook 1
+
+- name: Playbook Example
+  hosts: all
+  roles:
+      - web 
+  become: true

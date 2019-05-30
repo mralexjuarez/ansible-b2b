@@ -1,0 +1,7 @@
+### Playbook 1
+
+- name: Playbook One Example - Using Modules
+  hosts: all
+  roles:
+      - web
+  become: true
