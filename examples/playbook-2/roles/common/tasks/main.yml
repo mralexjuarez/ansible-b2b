@@ -9,6 +9,16 @@
 - name: Displaying Debug Information
   debug: var=ansible_facts
 
-- name: Display the systems hostname
+- name: Display the Systems hostname
   debug:
     msg: "The system's hostname is {{ hostname }}"
+
+# One way to dispaly variable information
+- name: Display the Systems IP Address
+  debug:
+    msg: "The IP address is {{ ansible_facts.default_ipv4.address }}"
+
+# Another way to access varibles
+- name: Display the Systems IP Address
+  debug:
+    msg: "The IP address is {{ ansible_facts["eth0"]["ipv4"]["address"] }}"
