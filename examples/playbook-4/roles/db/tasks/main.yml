@@ -1,0 +1,6 @@
+---
+# https://docs.ansible.com/ansible/latest/modules/apt_module.html
+- name: Install apache httpd but avoid starting it immediately (state=present is optional)
+  apt:
+    name: mysql-server
+    state: present

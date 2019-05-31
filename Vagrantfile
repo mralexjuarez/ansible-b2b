@@ -5,7 +5,7 @@ config.vm.define "web" do |web|
     web.vm.box = "centos/7"
      web.vm.network "private_network", ip: "192.168.33.10"
      config.vm.provision "ansible" do |ansible|
-        ansible.playbook = "examples/playbook-3/playbook.yml"
+        ansible.playbook = "examples/playbook-2/playbook.yml"
      end
   end
 
