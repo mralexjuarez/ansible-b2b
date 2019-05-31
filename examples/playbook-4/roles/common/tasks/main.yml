@@ -1,0 +1,29 @@
+---
+# Show Ansible Facts
+# Display the Hostname
+
+# https://docs.ansible.com/ansible/latest/modules/hostname_module.html
+- name: Change the Hostname
+  hostname: name="{{ machine_host_name }}"
+
+## Add the Web Server to /etc/hosts
+- name: Add obtools to the /etc/hosts
+  lineinfile:
+    path: /etc/hosts
+    line: '192.168.33.10	web'
+  become: true
+
+## Add the DB Server to /etc/hosts
+- name: Add obtools to the /etc/hosts
+  lineinfile:
+    path: /etc/hosts
+    line: '192.168.33.20	db'
+  become: true
+
+## Copy the MOTD to the serer
+- name: Copying the MOTD to the server
+  copy:
+    src: files/motd.txt
+    dest: /etc/motd
+    owner: root
+    mode: 0644

@@ -1,0 +1,8 @@
+### Playbook 3
+
+- name: Playbook Three - Templates and Files
+  hosts: all
+  roles:
+      - common
+      - web
+  become: true
