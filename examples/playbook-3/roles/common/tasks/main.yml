@@ -4,11 +4,18 @@
 
 # https://docs.ansible.com/ansible/latest/modules/hostname_module.html
 - name: Change the Hostname
-  hostname: name="web01"
+  hostname: name="{{ machine_host_name }}"
 
-- name: Displaying Debug Information
-  debug: var=ansible_facts
+## Add the Web Server to /etc/hosts
+- name: Add obtools to the /etc/hosts
+  lineinfile:
+    path: /etc/hosts
+    line: '192.168.33.10	web'
+  become: true
 
-- name: Display the systems hostname
-  debug:
-    msg: "The system's hostname is {{ hostname }}"
+## Add the DB Server to /etc/hosts
+- name: Add obtools to the /etc/hosts
+  lineinfile:
+    path: /etc/hosts
+    line: '192.168.33.20	db'
+  become: true

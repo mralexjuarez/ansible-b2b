@@ -1,6 +1,6 @@
-### Playbook 1
+### Playbook 3
 
-- name: Playbook Three Example - Manipulating Files
+- name: Playbook Three - Templates and Files
   hosts: all
   roles:
       - common

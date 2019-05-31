@@ -4,7 +4,7 @@
 
 # https://docs.ansible.com/ansible/latest/modules/hostname_module.html
 - name: Change the Hostname
-  hostname: name="web01"
+  hostname: name="{{ machine_host_name }}"
 
 - name: Displaying Debug Information
   debug: var=ansible_facts
@@ -21,4 +21,4 @@
 # Another way to access varibles
 - name: Display the Systems IP Address
   debug:
-    msg: "The IP address is {{ ansible_facts["eth0"]["ipv4"]["address"] }}"
+    msg: "The IP address is {{ ansible_facts['eth0']['ipv4']['address'] }}"
