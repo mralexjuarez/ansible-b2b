@@ -3,9 +3,9 @@
 - name: Playbook Three - Templates and Files
   hosts: all
   roles:
-      - common
-      - web
-        when: ansible_facts['os_family'] == 'RedHat'
-      - db
-        when: ansible_facts['os_family'] == 'Ubuntu'
+    - role: common
+    - role: web
+      when: ansible_facts['os_family'] == 'RedHat'
+    - role: db
+      when: ansible_facts['os_family'] == 'Ubuntu'
   become: true
