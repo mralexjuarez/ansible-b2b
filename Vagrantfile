@@ -14,7 +14,7 @@ config.vm.define "web" do |web|
       db.vm.box = "ubuntu/xenial64"
        db.vm.network "private_network", ip: "192.168.33.20"
     end
-     config.vm.provision "ansible" do |ansible|
-        ansible.playbook = "examples/playbook-4/playbook.yml"
-     end
+     #config.vm.provision "ansible" do |ansible|
+     #   ansible.playbook = "examples/playbook-4/playbook.yml"
+     #end
 end

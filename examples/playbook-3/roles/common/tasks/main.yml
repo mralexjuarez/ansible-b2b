@@ -19,3 +19,11 @@
     path: /etc/hosts
     line: '192.168.33.20	db'
   become: true
+
+## Copy the MOTD to the serer
+- name: Copying the MOTD to the server
+  copy:
+    src: files/motd.txt
+    dest: /etc/motd
+    owner: root
+    mode: 0644

@@ -2,6 +2,8 @@
 
 - name: Playbook Two Example - Variables
   hosts: all
+  vars:
+    #machine_host_name: machine01
   roles:
       - common
       #- web
